@@ -2,15 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Blog{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <h1>Bienvenue jeune amateur de biere</h1>
+        {% endblock %}
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+        <br>
+        <a href="{{ path('blog_show', { 'slug': "javascript-vs-php" }) }}">
+            Testing show() method from BlogController with a real article s slug.
+        </a>
+        <br>
+        <a href="{{ path('blog_index') }}">
+            Testing index() method from BlogController to view all articles.
+        </a>
     </body>
 </html>
